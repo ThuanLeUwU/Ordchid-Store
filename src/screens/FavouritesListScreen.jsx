@@ -52,8 +52,8 @@ export const FavouritesListScreen = ({ navigation }) => {
 
   const showAlertDeleteAll = () => {
     Alert.alert(
-      "Delete all favourite orchids",
-      "Are you sure? This action cannot revert!",
+      "Remove all",
+      "Would you want to remove all it?",
       [
         {
           text: "Cancel",

@@ -109,13 +109,13 @@ export const DetailScreen = ({ route, navigation }) => {
               right: 5,
             }}
           >
-            <IconButton
+            {/* <IconButton
               icon={isFavourite ? "cards-heart" : "cards-heart-outline"}
               mode="contained"
               iconColor="red"
               size={20}
               onPress={isFavourite ? showAllertDislike : handleLikeButton}
-            />
+            /> */}
           </View>
         </View>
         <View style={styles.content__wrapper}>
@@ -154,9 +154,41 @@ export const DetailScreen = ({ route, navigation }) => {
             </Text>
           </View>
         </View>
-        <Button style={styles.orchid__button} mode="contained">
-          Add to cart
-        </Button>
+        <View style={styles.orchid__wrapper}>
+          <Button style={styles.orchid__button} mode="contained">
+            Add to cart
+          </Button>
+          <IconButton
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              // position: "absolute",
+              top: -10,
+              right: 5,
+              left: 50,
+            }}
+            icon={isFavourite ? "cards-heart" : "cards-heart-outline"}
+            mode="contained"
+            iconColor="red"
+            size={20}
+            onPress={isFavourite ? showAllertDislike : handleLikeButton}
+          />
+
+          {/* <Pressable > */}
+            <IconButton
+            icon="home"
+            style={{
+              // display: "flex",
+              flexDirection: "column",
+              // position: "absolute",
+              top: -10,
+              right: 5,
+              left: 100,
+            }}
+            onPress={() => navigation.navigate("OrdChid Store")}
+            />
+          {/* </Pressable> */}
+        </View>
       </View>
       <StatusBar barStyle="dark-content" animated={true} />
     </SafeAreaView>
@@ -195,9 +227,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "500",
   },
+  orchid__wrapper: {
+    position: "absolute",
+    marginTop: 400,
+    display: "flex",
+    flexDirection: "row",
+  },
   orchid__button: {
     borderRadius: 4,
-    position: "absolute",
+    // position: "absolute",
+    textAlign: "center",
     bottom: 12,
     left: 20,
     right: 20,
